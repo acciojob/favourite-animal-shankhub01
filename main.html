@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Animal Photos</title>
+  <style>
+    #animal-photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+    .animal-photo {
+      margin: 10px;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+  <h1 id="photo-heading">Animal Photos</h1>
+ 
+  <div id="animal-photos"></div>
+ 
+  <script>
+    // Array of animal names in the specified order
+    var animals = [
+      'camel',
+      'cheetah',
+      'elephant',
+      'gorilla',
+      'koala',
+      'lion',
+      'polar_bear',
+      'tiger',
+      'wolf'
+    ];
+ 
+    // Function to create and append image elements to the container
+    function renderAnimalPhotos() {
+      var container = document.getElementById('animal-photos');
+ 
+      animals.forEach(function(animal) {
+        var image = document.createElement('img');
+        image.src = 'https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/' + animal + '.jpg';
+        image.alt = animal;
+        image.className = 'animal-photo';
+        container.appendChild(image);
+      });
+    }
+ 
+    // Call the function to render the animal photos
+    renderAnimalPhotos();
+  </script>
 </body>
-
 </html>
